@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 
 const SendBirdApplicationId=import.meta.env.VITE_SENDBIRD_APP_ID;
 const SendBirdApiToken=import.meta.env.VITE_SENDBIRD_API_TOKEN;
@@ -6,18 +6,18 @@ const FormatResult=(resp)=>{
     let result=[];
     let finalResult=[];
     resp.forEach((item)=>{
-        const listingId=item.carLisiting?.id;
+        const listingId=item.CarListing?.id;
         if(!result[listingId])
         {
             result[listingId]={
-                car:item.carLisiting,
+                car:item.CarListing,
                 images:[]
             }
         }
 
-        if(item.carImages)
+        if(item.CarImages)
         {
-            result[listingId].images.push(item.carImages)
+            result[listingId].images.push(item.CarImages)
         }
     })
    
@@ -64,6 +64,6 @@ const CreateSendBirdChannel=(users,title)=>{
 
 export default{
     FormatResult,
-    CreateSendBirdUser,
-    CreateSendBirdChannel
+    // CreateSendBirdUser,
+    // CreateSendBirdChannel
 }

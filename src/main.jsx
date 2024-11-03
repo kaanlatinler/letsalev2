@@ -4,11 +4,32 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/home'
 import { ClerkProvider } from '@clerk/clerk-react'
+import Profile from './pages/profile'
+import AddListing from './pages/add-listing'
+import { Toaster } from './components/ui/toaster'
+import SearchByCategory from './pages/search/[category]'
+import SearchByOptions from './pages/search'
 
 const router = createBrowserRouter([
 {
   path: '/',
   element: <Home />,
+},
+{
+  path: '/profile',
+  element: <Profile />,
+},
+{
+  path: '/add-listing',
+  element: <AddListing />,
+},
+{
+  path: '/search/:category',
+  element:<SearchByCategory />
+},
+{
+  path: '/search',
+  element:<SearchByOptions />
 }
 ])
 
@@ -22,6 +43,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <RouterProvider router={router} />
+      <Toaster  />
     </ClerkProvider>
   </StrictMode>,
 )

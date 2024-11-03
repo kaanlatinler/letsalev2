@@ -1,0 +1,2 @@
+Activating the delete button of the cards on the profile page.
+Updating images for edit mode.
