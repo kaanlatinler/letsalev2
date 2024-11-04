@@ -44,7 +44,7 @@
       "name": "condition",
       "fieldType": "dropdown",
       "required": true,
-      "options": ["New", "Used", "Certified Pre-Owned"],
+      "options": ["New", "Certified Pre-Owned"],
       "column": 1,
       "icon": "FaCheckCircle"
     },

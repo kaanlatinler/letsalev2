@@ -4,10 +4,12 @@ import { BsFuelPumpFill } from "react-icons/bs";
 import { MdSpeed } from "react-icons/md";
 import { TbManualGearbox } from "react-icons/tb";
 import { IoMdOpen } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 const CarItem = ({car}) => {
   return (
-    <div className='rounded-xl bg-white border hover:shadow-xl cursor-pointer'>
+    <Link to={`/listing-details/${car?.id}`}>
+        <div className='rounded-xl bg-white border hover:shadow-xl cursor-pointer'>
         <h2 className='absolute m-2 bg-green-500 rounded-full px-2 text-sm text-white'>{car?.condition}</h2>
         <img src={car?.images[0].imageUrl} width={'100%'} height={250} alt=""
         className='rounded-t-xl h-[180px] object-cover' />
@@ -20,11 +22,11 @@ const CarItem = ({car}) => {
             <div className='grid grid-cols-3 mt-5'>
                 <div className='flex flex-col items-center'>
                     <BsFuelPumpFill className='text-lg mb-2' />
-                    <h2>{car?.milage} Miles</h2>
+                    <h2>{car?.fuelType}</h2>
                 </div>
                 <div className='flex flex-col items-center'>
                     <MdSpeed className='text-lg mb-2' />
-                    <h2>{car?.fuelType}</h2>
+                    <h2>{car?.mileage} Miles</h2>
                 </div>
                 <div className='flex flex-col items-center'>
                     <TbManualGearbox className='text-lg mb-2' />
@@ -42,6 +44,7 @@ const CarItem = ({car}) => {
             </div>
         </div>
     </div>
+    </Link>
   )
 }
 

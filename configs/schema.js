@@ -24,6 +24,12 @@ export const CarListing = pgTable("CarListing", {
   listingDescription: varchar("listingDescription").notNull(),
   features: json("features"),
   createdBy: varchar("createdBy").notNull().default("kaanlatinlerhd@gmail.com"),
+  userName: varchar("userName").notNull().default("Kaan Latinler"),
+  userImageUrl: varchar("userImageUrl")
+    .notNull()
+    .default(
+      "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U"
+    ),
   postedOn: varchar("postedOn"),
 });
 
