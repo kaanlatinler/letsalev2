@@ -18,7 +18,7 @@ const Search = () => {
   const [pricing, setPricing] = useState(null);
 
   return (
-    <div className="p-2 md:p-5 bg-white rounded-md md:rounded-full flex-col md:flex md:flex-row gap-10 px-5 items-center w-[60%]">
+    <div className="p-2 md:p-5 bg-white rounded-md md:rounded-full flex-col md:flex md:flex-row gap-10 px-5 items-center w-[60%] ">
       <Select onValueChange={(v) => setCars(v)}>
         <SelectTrigger className="outline-none md:border-none w-full shadow-none">
           <SelectValue placeholder="Cars" />
