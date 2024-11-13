@@ -3,6 +3,7 @@ import React from 'react'
 import MyListing from './components/MyListing'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Footer from '@/components/Footer'
+import Inbox from './components/Inbox'
 
 
 
@@ -21,7 +22,9 @@ const Profile = () => {
           <TabsContent value="myListing">
             <MyListing />
           </TabsContent>
-          <TabsContent value="inbox">Inbox</TabsContent>
+          <TabsContent value="inbox">
+            <Inbox />
+          </TabsContent>
           <TabsContent value="profile">Profile</TabsContent>
         </Tabs>
 
